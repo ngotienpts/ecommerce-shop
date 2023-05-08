@@ -20,7 +20,7 @@ const ProductDetails = () => {
     if (!product) {
         return (
             <section className="h-screen flex items-center justify-center">
-                <div className="container mx-auto">Loading...</div>
+                <div className="container mx-auto text-center">Loading...</div>
             </section>
         );
     }
@@ -28,7 +28,7 @@ const ProductDetails = () => {
     //destructure product
     const { title, image, price, description } = product;
     return (
-        <section className="pt-32 pb-12 lg:py-32 h-[calc(100vh-120px)] flex items-center">
+        <section className="pt-32 pb-12 lg:py-32 lg:h-[calc(100vh-120px)] flex items-center">
             <div className="container mx-auto">
                 {/* image & text wrapper */}
                 <div className="flex flex-col lg:flex-row items-center">

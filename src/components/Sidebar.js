@@ -29,7 +29,7 @@ const Sidebar = () => {
                     <IoMdArrowForward className="text-2xl" />
                 </div>
             </div>
-            <div className="overflow-auto h-[calc(100vh-300px)]">
+            <div className="overflow-auto h-[calc(100vh-330px)] lg:h-[calc(100vh-300px)]">
                 {cart.map((item) => {
                     return <CartItem key={item.id} item={item} />;
                 })}

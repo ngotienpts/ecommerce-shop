@@ -25,7 +25,7 @@ const CartProvider = ({ children }) => {
         const cartItem = cart.find((item) => item.id === id);
         // if cart item is already in the cart
         if (cartItem) {
-            const newCart = [...cart].map((item) => {
+            const newCart = cart.map((item) => {
                 if (item.id === id) {
                     return { ...item, amount: cartItem.amount + 1 };
                 } else {
