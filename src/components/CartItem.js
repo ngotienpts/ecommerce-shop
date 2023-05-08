@@ -8,7 +8,7 @@ import { CartContext } from '../contexts/CartContext';
 
 const CartItem = ({ item }) => {
     // context
-    const { removeFromCart } = useContext(CartContext);
+    const { removeFromCart, increaseAmount, decreaseAmount } = useContext(CartContext);
     // destructure item
     const { id, title, image, price, amount } = item;
     return (
@@ -39,13 +39,19 @@ const CartItem = ({ item }) => {
                         {/* qty */}
                         <div className="flex flex-1 items-center max-w-[100px] h-full  border text-primary font-medium">
                             {/* minus icon */}
-                            <div className="flex-1 h-full flex items-center justify-center cursor-pointer">
+                            <div
+                                className="flex-1 h-full flex items-center justify-center cursor-pointer"
+                                onClick={() => decreaseAmount(id)}
+                            >
                                 <IoMdRemove />
                             </div>
                             {/* amount */}
                             <div className="flex h-full justify-center items-center px-2">{amount}</div>
                             {/* plus icon */}
-                            <div className="flex-1 h-full flex items-center justify-center cursor-pointer">
+                            <div
+                                className="flex-1 h-full flex items-center justify-center cursor-pointer"
+                                onClick={() => increaseAmount(id)}
+                            >
                                 <IoMdAdd />
                             </div>
                         </div>
